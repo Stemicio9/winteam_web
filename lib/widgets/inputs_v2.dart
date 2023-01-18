@@ -31,10 +31,7 @@ class InputsV2Widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final node = FocusScope.of(context);
-    return Padding(
-        padding:
-            const EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 10),
-        child: TextFormField(
+    return TextFormField(
           //  validator: validator ?? defaultvalidator,
           style: const TextStyle(
             fontSize: 14,
@@ -56,20 +53,12 @@ class InputsV2Widget extends StatelessWidget {
               borderRadius: BorderRadius.circular(3.0),
             ),
             hintText: hinttext,
-            hintStyle: TextStyle(color: black, fontSize: 14),
+            hintStyle: const TextStyle(color: black, fontSize: 14, fontWeight: FontWeight.w500),
             filled: true,
-           /*   suffixIcon:Align(
-                widthFactor: 1.0,
-                heightFactor: 1.0,
-                child: Icon(
-                  Icons.remove_red_eye,
-                ),
-              ), */
-            contentPadding: EdgeInsets.only(left: 40),
             fillColor: white,
             floatingLabelBehavior: FloatingLabelBehavior.never
           ),
-        ));
+        );
   }
 }
 

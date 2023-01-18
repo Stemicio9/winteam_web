@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:winteam_web/constants/language.dart';
 import 'package:winteam_web/widgets/utilities/image_utility.dart';
@@ -9,10 +7,16 @@ class BackgroundV2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ImagePlaceholder(
-      name: BACKGROUND_IMAGE_NAME,
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-      opacity: 0.1,);
+    return Container(
+      decoration: BoxDecoration(
+        color: Theme.of(context).backgroundColor,
+        borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+      ),
+      child: ImagePlaceholder(
+          name: BACKGROUND_IMAGE_NAME,
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          opacity: 0.1),
+    );
   }
 }

@@ -6,8 +6,9 @@ class Texth1V2 extends StatelessWidget {
   final bool? underline;
   final FontWeight? weight;
   final TextAlign? textalign;
+  final double? fontsize;
 
-  Texth1V2({required this.testo, required this.color, this.underline,this.weight, this.textalign});
+  Texth1V2({required this.testo, required this.color, this.underline,this.weight, this.textalign, this.fontsize});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class Texth1V2 extends StatelessWidget {
         testo,
         textAlign: textalign,
         style: TextStyle(
-          fontSize: 24,
+          fontSize: fontsize ?? 24,
           color: color,
           fontWeight: weight,
           decoration: (underline != null && underline!)
@@ -61,8 +62,9 @@ class Texth3V2 extends StatelessWidget {
   final bool? underline;
   final FontWeight? weight;
   final TextAlign? textalign;
+  final double? fontsize;
 
-  Texth3V2({required this.testo, required this.color, this.underline, this.weight, this.textalign});
+  Texth3V2({required this.testo, required this.color, this.underline, this.weight, this.textalign, this.fontsize = 16});
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +72,7 @@ class Texth3V2 extends StatelessWidget {
       testo,
       textAlign: textalign,
       style: TextStyle(
-        fontSize: 16,
+        fontSize: fontsize,
         color: color,
         fontWeight: weight,
         decoration:

@@ -42,10 +42,9 @@ class LoginFormV2State extends State<LoginFormV2> {
   UserCubit get _cubit => context.read<UserCubit>();
 
   final _formKey = GlobalKey<FormState>();
-
   final TextEditingController _emailTextController = TextEditingController();
-
   final TextEditingController _passwordTextController = TextEditingController();
+  final double logoWidth = 250;
 
 
   @override
@@ -72,23 +71,17 @@ class LoginFormV2State extends State<LoginFormV2> {
 
     // for testing purpose, insert here Login form
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50.0),
+      padding: const EdgeInsets.symmetric(vertical: 15.0),
       child: Form(
           key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children:  [
-
-              logoSection(),
-
-              loginTextSection(),
-
-              loginSection(),
-
-              forgotPasswordSection(),
-
-
+              Expanded(flex: 2, child: logoSection()),
+              Expanded(flex: 1, child: loginTextSection()),
+              Expanded(flex: 3, child: loginSection()),
+              Expanded(flex: 1, child: forgotPasswordSection())
           ],
         )
       ),
@@ -122,7 +115,7 @@ class LoginFormV2State extends State<LoginFormV2> {
 
   Widget logoSection(){
     return  Container(
-      width: MediaQuery.of(context).size.width,
+      width: logoWidth,
       child: const ImagePlaceholder(
         name: LOGO_IMAGE_NAME,
       ),
@@ -133,31 +126,32 @@ class LoginFormV2State extends State<LoginFormV2> {
     return Texth1V2(
       testo: LOGIN,
       color: white,
-      weight: FontWeight.w600,
-
+      weight: FontWeight.w900,
+      fontsize: 24
     );
   }
 
   Widget loginSection(){
-    return Column(
-      children: [
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 50.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
 
-        InputsV2Widget(
-          hinttext: EMAIL,
-          controller: _emailTextController,
-        ),
+          InputsV2Widget(
+            hinttext: EMAIL,
+            controller: _emailTextController,
+          ),
 
-        InputsV2Widget(
-          hinttext: PASSWORD,
-          controller: _passwordTextController,
-          ispassword: true,
-        ),
+          InputsV2Widget(
+            hinttext: PASSWORD,
+            controller: _passwordTextController,
+            ispassword: true,
+          ),
 
-        CheckboxV2Widget(),
-
-        ActionButtonV2(LOGIN,formsubmit,
-            315),
-      ],
+          ActionButtonV2(LOGIN_BUTTON,formsubmit),
+        ],
+      ),
     );
   }
 
@@ -168,6 +162,7 @@ class LoginFormV2State extends State<LoginFormV2> {
       testo: FORGOT_PASSWORD,
       color: white,
       underline: true,
+          weight: FontWeight.w600,
         )
     );
   }

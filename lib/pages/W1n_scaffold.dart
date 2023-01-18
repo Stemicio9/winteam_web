@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:winteam_web/pages/background/GradientBackground.dart';
 import 'package:winteam_web/widgets/utilities/close_on_tap.dart';
 import 'background/background.dart';
 
@@ -33,12 +34,10 @@ class W1NScaffoldWithBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Theme.of(context).backgroundColor,
       body: CloseOnTapUtility(
           child: Stack(
             children: [
-              BackgroundV2(),
-
+              const GradientBackground(),
               body
             ],
           )

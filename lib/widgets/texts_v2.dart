@@ -8,12 +8,17 @@ class Texth1V2 extends StatelessWidget {
   final TextAlign? textalign;
   final double? fontsize;
 
-  Texth1V2({required this.testo, required this.color, this.underline,this.weight, this.textalign, this.fontsize});
+  Texth1V2(
+      {required this.testo,
+      required this.color,
+      this.underline,
+      this.weight,
+      this.textalign,
+      this.fontsize});
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-        testo,
+    return Text(testo,
         textAlign: textalign,
         style: TextStyle(
           fontSize: fontsize ?? 24,
@@ -22,12 +27,9 @@ class Texth1V2 extends StatelessWidget {
           decoration: (underline != null && underline!)
               ? TextDecoration.underline
               : null,
-        )
-    );
+        ));
   }
 }
-
-
 
 class Texth2V2 extends StatelessWidget {
   final String testo;
@@ -36,7 +38,12 @@ class Texth2V2 extends StatelessWidget {
   final FontWeight? weight;
   final TextAlign? textalign;
 
-  Texth2V2({required this.testo, required this.color, this.underline, this.weight, this.textalign});
+  Texth2V2(
+      {required this.testo,
+      required this.color,
+      this.underline,
+      this.weight,
+      this.textalign});
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +61,6 @@ class Texth2V2 extends StatelessWidget {
   }
 }
 
-
-
 class Texth3V2 extends StatelessWidget {
   final String testo;
   final Color color;
@@ -64,7 +69,13 @@ class Texth3V2 extends StatelessWidget {
   final TextAlign? textalign;
   final double? fontsize;
 
-  Texth3V2({required this.testo, required this.color, this.underline, this.weight, this.textalign, this.fontsize = 16});
+  Texth3V2(
+      {required this.testo,
+      required this.color,
+      this.underline,
+      this.weight,
+      this.textalign,
+      this.fontsize = 16});
 
   @override
   Widget build(BuildContext context) {
@@ -82,8 +93,6 @@ class Texth3V2 extends StatelessWidget {
   }
 }
 
-
-
 class Texth4V2 extends StatelessWidget {
   final String testo;
   final Color color;
@@ -91,7 +100,12 @@ class Texth4V2 extends StatelessWidget {
   final FontWeight? weight;
   final TextAlign? textalign;
 
-  Texth4V2({required this.testo, required this.color, this.underline, this.weight, this.textalign});
+  Texth4V2(
+      {required this.testo,
+      required this.color,
+      this.underline,
+      this.weight,
+      this.textalign});
 
   @override
   Widget build(BuildContext context) {
@@ -103,9 +117,8 @@ class Texth4V2 extends StatelessWidget {
         color: color,
         fontWeight: weight,
         decoration:
-        (underline != null && underline!) ? TextDecoration.underline : null,
+            (underline != null && underline!) ? TextDecoration.underline : null,
       ),
     );
   }
 }
-

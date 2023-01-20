@@ -100,6 +100,7 @@ class MyApp extends StatelessWidget {
           ),
           routes: RouteConstants.route(context) ,
           initialRoute: initialRoute,
+          debugShowCheckedModeBanner: false
         )
     );
 

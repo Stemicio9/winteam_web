@@ -1,5 +1,3 @@
-
-
 import 'package:winteam_web/model/skill_entity.dart';
 
 class UserEntity {
@@ -25,6 +23,7 @@ class UserEntity {
   DateTime? lastSubscriptionDate;
   List<String>? companyTypeId;
   bool? verified;
+  double? rating;
   List<String>? influencedUserList;
   bool? enabledAnnunci;
   String? companyName;
@@ -54,12 +53,13 @@ class UserEntity {
       this.enabledAnnunci,
       this.firstName,
       this.email,
-      this.companyName});
+      this.companyName,
+      this.rating});
 
   //toString
   @override
   String toString() {
-    return 'UserEntity{id: $id, firstName: $firstName, lastName: $lastName, roleId: $roleId, email: $email, description: $description, brief: $brief, skillList: $skillList, availabilityDays: $availabilityDays, availabilityHourSlots: $availabilityHourSlots, availabilityCities: $availabilityCities, address: $address, city: $city, province: $province, nation: $nation, phoneNumber: $phoneNumber, imageLink: $imageLink, contatoreAnnunci: $contatoreAnnunci, subscriptionId: $subscriptionId, lastSubscriptionDate: $lastSubscriptionDate, companyTypeId: $companyTypeId, verified: $verified, influencedUserList: $influencedUserList, enabledAnnunci: $enabledAnnunci, companyName: $companyName}';
+    return 'UserEntity{id: $id, firstName: $firstName, lastName: $lastName, roleId: $roleId, email: $email, description: $description, brief: $brief, skillList: $skillList, availabilityDays: $availabilityDays, availabilityHourSlots: $availabilityHourSlots, availabilityCities: $availabilityCities, address: $address, city: $city, province: $province, nation: $nation, phoneNumber: $phoneNumber, imageLink: $imageLink, contatoreAnnunci: $contatoreAnnunci, subscriptionId: $subscriptionId, lastSubscriptionDate: $lastSubscriptionDate, companyTypeId: $companyTypeId, verified: $verified, influencedUserList: $influencedUserList, enabledAnnunci: $enabledAnnunci, companyName: $companyName, rating: $rating}';
   }
 
   factory UserEntity.fromJson(Map<String, dynamic> json) => UserEntity(
@@ -67,6 +67,7 @@ class UserEntity {
       firstName: json["firstName"] ?? "",
       lastName: json["lastName"] ?? "",
       email: json["email"] ?? "",
+      rating: json["rating"] ?? 0.0,
       roleId: json["roleId"] ?? "",
       skillList: json["skillList"] != null
           ? (json["skillList"] as List<dynamic>)
@@ -80,8 +81,8 @@ class UserEntity {
       companyName: json['companyName'] ?? "",
       address: json['address'] ?? "");
 
-  UserEntity copyWith({
-      String? id,
+  UserEntity copyWith(
+      {String? id,
       String? firstName,
       String? lastName,
       String? roleId,
@@ -103,6 +104,7 @@ class UserEntity {
       DateTime? lastSubscriptionDate,
       List<String>? companyTypeId,
       bool? verified,
+      double? rating,
       List<String>? influencedUserList,
       bool? enabledAnnunci,
       String? companyName}) {
@@ -116,7 +118,8 @@ class UserEntity {
         brief: brief ?? this.brief,
         skillList: skillList ?? this.skillList,
         availabilityDays: availabilityDays ?? this.availabilityDays,
-        availabilityHourSlots: availabilityHourSlots ?? this.availabilityHourSlots,
+        availabilityHourSlots:
+            availabilityHourSlots ?? this.availabilityHourSlots,
         availabilityCities: availabilityCities ?? this.availabilityCities,
         address: address ?? this.address,
         city: city ?? this.city,
@@ -131,6 +134,7 @@ class UserEntity {
         verified: verified ?? this.verified,
         influencedUserList: influencedUserList ?? this.influencedUserList,
         enabledAnnunci: enabledAnnunci ?? this.enabledAnnunci,
+        rating: rating ?? this.rating,
         companyName: companyName ?? this.companyName);
   }
 
@@ -159,6 +163,7 @@ class UserEntity {
         "verified": verified,
         "influencedUserList": influencedUserList,
         "enabledAnnunci": enabledAnnunci,
-        "companyName": companyName
+        "companyName": companyName,
+        "rating": rating
       };
 }

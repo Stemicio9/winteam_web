@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:winteam_web/pages/utils/utils.dart';
 
 class Texth1V2 extends StatelessWidget {
   final String testo;
@@ -18,16 +19,18 @@ class Texth1V2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(testo,
-        textAlign: textalign,
-        style: TextStyle(
-          fontSize: fontsize ?? 24,
-          color: color,
-          fontWeight: weight,
-          decoration: (underline != null && underline!)
-              ? TextDecoration.underline
-              : null,
-        ));
+    return Text(
+      testo,
+      textAlign: textalign,
+      style: SafeGoogleFont(
+        'Montserrat',
+        fontWeight: weight,
+        color: color,
+        fontSize: fontsize ?? 24,
+        decoration:
+            (underline != null && underline!) ? TextDecoration.underline : null,
+      ),
+    );
   }
 }
 
@@ -50,10 +53,11 @@ class Texth2V2 extends StatelessWidget {
     return Text(
       testo,
       textAlign: textalign,
-      style: TextStyle(
-        fontSize: 18,
-        color: color,
+      style: SafeGoogleFont(
+        'Montserrat',
         fontWeight: weight,
+        color: color,
+        fontSize: 18,
         decoration:
             (underline != null && underline!) ? TextDecoration.underline : null,
       ),
@@ -112,10 +116,11 @@ class Texth4V2 extends StatelessWidget {
     return Text(
       testo,
       textAlign: textalign,
-      style: TextStyle(
-        fontSize: 14,
-        color: color,
+      style: SafeGoogleFont(
+        'Montserrat',
         fontWeight: weight,
+        color: color,
+        fontSize: 14,
         decoration:
             (underline != null && underline!) ? TextDecoration.underline : null,
       ),

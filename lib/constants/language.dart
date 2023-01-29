@@ -25,10 +25,30 @@ const String DONT_HAVE_AN_ACCOUNT = "Non hai un account?";
 const String PASSWORD_RECOVERY = "Recupera password";
 const String INSERT_EMAIL= "Inserisci la tua email";
 const String BACK= "Torna indietro";
-const String I_ALREADY_HAVE_ACCOUNT= "Ho già un account";
-
-
+const String I_ALREADY_HAVE_ACCOUNT = "Ho già un account";
+const String SUBSCRIPTION_TYPE_TITLE = "Tipo di abbonamento";
+const String EDIT = "Modifica";
+const String EXPIRING = "Scadenza";
+const String AVAILABLE_POSTS = "Post disponibili";
+const String ADD = "Aggiungi";
+const String AVAILABLE_FEATURES= "Features disponibili";
+const String EMPLOYEES_SEARCH= "Ricerca dipendenti";
+const String ENABLED = "Abilitata";
+const String EDIT_SUBSCRIPTION= "Modifica il tuo abbonamento";
+const String MANAGE_SUBSCRIPTION= "Gestisci il tuo abbonamento";
+const String CURRENT_SUB= "Attuale";
+const String PASS_TO= "Passa a";
+const String CVV= "CVV";
+const String CREDIT_CARD_NUMBER= "Numero della carta";
+const String CREDIT_CARD_NAME= "Nome sulla carta";
+const String PAYMENT_CONFIRM= "Conferma l\'acquisto";
 const String REMOVE_ACCOUNT = "Elimina il tuo account";
+const String PAYMENT_TITLE = "Completa il pagamento";
+const String PAYMENT_DETAIL = "Dettagli di pagamento";
+const String PAYMENT_METHOD = "Metodo di pagamento";
+const String BANK_TRANSFER = "Bonifico bancario";
+const String CREDIT_CARD = "Carta di credito";
+
 
 // Stati degli annunci
 const String ACTIVE = "active";
@@ -101,6 +121,31 @@ final Map<String, String> LANG_IT = {
   INFORMAZIONI_DI_CONTATTO: "Informazioni di contatto",
   CHI_SIAMO: "Chi siamo",
   REMOVE_ACCOUNT: "Elimina il tuo account",
+  SUBSCRIPTION_TYPE_TITLE: "Tipo di abbonamento",
+  EXPIRING:"Scadenza",
+  EDIT:"Modifica",
+  AVAILABLE_POSTS:"Post disponibili",
+  ADD:"Aggiungi",
+  AVAILABLE_FEATURES:"Features disponibili",
+  EMPLOYEES_SEARCH:"Ricerca dipendenti",
+  ENABLED:"Abilitata",
+  EDIT_SUBSCRIPTION:"Modifica il tuo abbonamento",
+  MANAGE_SUBSCRIPTION:"Gestisci il tuo abbonamento",
+  CURRENT_SUB:"Attuale",
+  PASS_TO:"Passa a",
+  CVV:"CVV",
+  CREDIT_CARD_NUMBER:"Numero della carta",
+  CREDIT_CARD_NAME:"Nome sulla carta",
+  PAYMENT_CONFIRM:"Conferma l\'acquisto",
+  PAYMENT_TITLE:"Completa il pagamento",
+  PAYMENT_DETAIL:"Dettagli di pagamento",
+  PAYMENT_METHOD:"Metodo di pagamento",
+  CREDIT_CARD:"Carta di credito",
+  BANK_TRANSFER:"Bonifico bancario",
+
+
+
+
   "": "",
   "": "",
   "": "",

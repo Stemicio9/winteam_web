@@ -28,4 +28,10 @@ class SkillEntity {
         "hexColorText": hexColorText,
         "hexColorBackground": hexColorBackground
       };
+
+
+  @override
+  String toString() {
+    return name ?? "";
+  }
 }

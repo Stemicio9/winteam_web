@@ -52,6 +52,13 @@ class UserCubit extends Cubit<UserState> {
 
 
 
+  logout(){
+    emit(UserEmpty());
+  }
+
+
+
+
 
 
 

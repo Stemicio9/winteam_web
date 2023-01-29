@@ -1,5 +1,3 @@
-
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,7 +14,6 @@ import 'package:winteam_web/widgets/inputs_v2.dart';
 import 'package:winteam_web/widgets/texts_v2.dart';
 import 'package:winteam_web/widgets/utilities/image_utility.dart';
 
-
 class LoginWidget extends StatelessWidget {
   const LoginWidget({super.key});
 
@@ -29,8 +26,7 @@ class LoginWidget extends StatelessWidget {
   }
 }
 
-
-class LoginFormV2 extends StatefulWidget{
+class LoginFormV2 extends StatefulWidget {
   @override
   LoginFormV2State createState() {
     return LoginFormV2State();
@@ -38,7 +34,6 @@ class LoginFormV2 extends StatefulWidget{
 }
 
 class LoginFormV2State extends State<LoginFormV2> {
-
   UserCubit get _cubit => context.read<UserCubit>();
 
   final _formKey = GlobalKey<FormState>();
@@ -46,10 +41,9 @@ class LoginFormV2State extends State<LoginFormV2> {
   final TextEditingController _passwordTextController = TextEditingController();
   final double logoWidth = 250;
 
-
   @override
   Widget build(BuildContext context) {
-   /* return BlocBuilder<UserCubit, UserState>(
+    /* return BlocBuilder<UserCubit, UserState>(
         builder: (_, state) {
           if (state is NotAuthenticated) {
             // todo
@@ -77,44 +71,43 @@ class LoginFormV2State extends State<LoginFormV2> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children:  [
+            children: [
               Expanded(flex: 2, child: logoSection()),
               Expanded(flex: 1, child: loginTextSection()),
               Expanded(flex: 3, child: loginSection()),
               Expanded(flex: 1, child: forgotPasswordSection())
-          ],
-        )
-      ),
+            ],
+          )),
     );
   }
 
   formsubmit() async {
     if (_formKey.currentState!.validate()) {
-      UserCredential? log = await signIn(_emailTextController.text, _passwordTextController.text);
+      UserCredential? log =
+          await signIn(_emailTextController.text, _passwordTextController.text);
 
-      if(log == null || log.user == null){
+      if (log == null || log.user == null) {
         // @todo avvisare che il login è sbagliato
         return;
       }
 
-      var a = await log!.user!.getIdToken();
+      var a = await log.user!.getIdToken();
 
       // DATORE, LAVORATORE, INFLUENCER
       UserEntity? entity = await _cubit.me();
 
-      if(entity == null) return;
+      if (entity == null) return;
 
-
-      if(entity.roleId == "DATORE"){
+      if (entity.roleId == "DATORE") {
         Navigator.pushNamed(context, RouteConstants.dashboard);
-      }else {
+      } else {
         // todo lanciare un messaggio di errore o non so cosa, è entrato un lavoratore!!!!
       }
     }
   }
 
-  Widget logoSection(){
-    return  Container(
+  Widget logoSection() {
+    return Container(
       width: logoWidth,
       child: const ImagePlaceholder(
         name: LOGO_IMAGE_NAME,
@@ -122,58 +115,65 @@ class LoginFormV2State extends State<LoginFormV2> {
     );
   }
 
-  Widget loginTextSection(){
+  Widget loginTextSection() {
     return Texth1V2(
-      testo: LOGIN,
-      color: white,
-      weight: FontWeight.w900,
-      fontsize: 24
-    );
+        testo: LOGIN,
+        color: white,
+        weight: FontWeight.w700,
+        fontsize: 24);
   }
 
-  Widget loginSection(){
+  Widget loginSection() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 50.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-
           InputsV2Widget(
             hinttext: EMAIL,
             controller: _emailTextController,
           ),
-
           InputsV2Widget(
             hinttext: PASSWORD,
             controller: _passwordTextController,
             ispassword: true,
           ),
-
-          ActionButtonV2(LOGIN_BUTTON,formsubmit),
+          ActionButtonV2(action: formsubmit, text: LOGIN_BUTTON),
         ],
       ),
     );
   }
 
-  Widget forgotPasswordSection(){
-    return GestureDetector(
-        onTap: vaiapaginapassworddimenticata,
-        child: Texth3V2(
-      testo: FORGOT_PASSWORD,
-      color: white,
-      underline: true,
-          weight: FontWeight.w600,
-        )
+  Widget forgotPasswordSection() {
+    return Container(
+      child: Column(
+        children: [
+          Expanded(
+              flex: 2,
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: vaiapaginapassworddimenticata,
+                  child:  Texth4V2(
+                    testo: getCurrentLanguageValue(FORGOT_PASSWORD)!,
+                    color: white,
+                    weight: FontWeight.w600,
+                    underline: true,
+                  ),
+                ),
+              )
+          ),
+          Expanded(
+            flex: 4,
+            child: Container(),
+          )
+        ],
+      ),
     );
+
   }
 
-
-
-  vaiapaginapassworddimenticata(){
+  vaiapaginapassworddimenticata() {
     Navigator.of(context).pushNamed(RouteConstants.passDimenticata);
   }
-
-
 }
-
-

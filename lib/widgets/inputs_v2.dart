@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:winteam_web/constants/colors.dart';
+import 'package:winteam_web/pages/utils/utils.dart';
 
 class InputsV2Widget extends StatelessWidget {
   final double round = 30.0;
@@ -52,8 +53,12 @@ class InputsV2Widget extends StatelessWidget {
             borderRadius: BorderRadius.circular(3.0),
           ),
           hintText: hinttext,
-          hintStyle: const TextStyle(
-              color: black, fontSize: 14, fontWeight: FontWeight.w500),
+          hintStyle: SafeGoogleFont(
+            'Montserrat',
+            fontWeight: FontWeight.w500,
+            color: black,
+            fontSize: 14,
+          ),
           filled: true,
           fillColor: white,
           floatingLabelBehavior: FloatingLabelBehavior.never),
